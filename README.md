@@ -1,9 +1,6 @@
-## Example Cheat Sheet <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
-## If anything is missing refer here
-````
-https://github.com/0xsyr0/oscp
-````
-## Service Enumeration <img src="https://cdn-icons-png.flaticon.com/512/6989/6989458.png" width="40" height="40" />
+## OSCP Cheat Sheet
+
+## Service Enumeration 
 ### Network Enumeration
 ````
 ping $IP #63 ttl = linux #127 ttl = windows
