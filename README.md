@@ -359,6 +359,7 @@ ffuf -w /usr/share/wordlists/dirb/big.txt -u http://$IP/FUZZ
 ````
 gobuster dir -u http://10.11.1.71:80/site/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -e txt,php,html,htm
 gobuster dir -u http://10.11.1.71:80/site/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -e txt,php,html,htm
+gobuster vhost -u devvortex.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
 ````
 ###### feroxbuster
 ````
