@@ -361,6 +361,10 @@ gobuster dir -u http://10.11.1.71:80/site/ -w /usr/share/seclists/Discovery/Web-
 gobuster dir -u http://10.11.1.71:80/site/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -e txt,php,html,htm
 gobuster vhost -u devvortex.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
 ````
+###### Joomla Scan
+````
+joomscan -u http://dev.devvortex.htb
+````
 ###### feroxbuster
 ````
 feroxbuster -u http://<$IP> -t 30 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x "txt,html,php,asp,aspx,jsp" -v -k -n -e 
