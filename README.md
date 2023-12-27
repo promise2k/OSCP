@@ -836,6 +836,7 @@ sudo nmap -sU -p 161 --script snmp-brute $IP --script-args snmp-brute.communitie
 ````
 ````
 snmpwalk -c public -v1 $IP
+onesixtyone -c dict.txt 10.129.42.254 >> Brute force SNMP secret string
 ````
 ##### Hacktricks
 ````
