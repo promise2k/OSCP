@@ -818,6 +818,27 @@ do_connect: Connection to 192.168.214.125 failed (Error NT_STATUS_IO_TIMEOUT)
 Unable to connect with SMB1 -- no workgroup available
 ````
 ````
+nbtscan 192.168.217.247
+  smbmap -H 192.168.217.247
+ smbclient -L 192.168.217.247
+ enum4linux -U 192.168.217.247
+smbclient -L \\\\192.168.231.55
+smbclient -N -L //10.10.10.125
+
+Syntax to access smb
+
+
+smbclient -U oscp.exam/web_svc ////192.168.191.147//setup >> works
+smbclient -p 12445  //192.168.211.125/Commander
+ smbmap -u support -p Freedom1 -d workgroup -H 192.168.190.153 >> works
+smbclient \\\\192.168.228.122\\SYSVOL -U 'hutch.offsec\fmcsorley' >> works
+smbclient -N //10.10.10.125/Reports
+
+crackmapexec smb 192.168.228.122 -u fmcsorley -p CrabSharkJellyfish192 --shares
+
+
+
+
 smbclient '//192.168.214.125/Sarge' -p 12445
 Password for [WORKGROUP\root]:
 Anonymous login successful
