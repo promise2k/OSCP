@@ -354,6 +354,7 @@ dirb http://target.com
 ````
 ffuf -w /usr/share/wordlists/dirb/common.txt -u http://$IP/FUZZ
 ffuf -w /usr/share/wordlists/dirb/big.txt -u http://$IP/FUZZ
+ffuf -w /usr/share/seclists/Discovery/DNS/namelist.txt -u http://10.129.17.26 -H "HOST: FUZZ.inlanefreight.htb" -fs 10918 >> vhost fuzzing
 ````
 ###### gobuster
 ````
