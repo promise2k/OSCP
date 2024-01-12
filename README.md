@@ -346,9 +346,9 @@ whatweb -a 3 $IP
 nikto -ask=no -h http://$IP 2>&1
 ````
 ##### Directory Busting
-##### Dirb
+##### Dirsearch
 ````
-dirb http://target.com
+dirsearch -u http://cozyhosting.htb
 ````
 ##### ffuf
 ````
