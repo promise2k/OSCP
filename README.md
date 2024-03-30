@@ -352,9 +352,15 @@ dirsearch -u http://cozyhosting.htb
 ````
 ##### ffuf
 ````
-ffuf -w /usr/share/wordlists/dirb/common.txt -u http://$IP/FUZZ
-ffuf -w /usr/share/wordlists/dirb/big.txt -u http://$IP/FUZZ
-ffuf -w /usr/share/seclists/Discovery/DNS/namelist.txt -u http://10.129.17.26 -H "HOST: FUZZ.inlanefreight.htb" -fs 10918 >> vhost fuzzing
+ffuf -w wordlist.txt:FUZZ -u http://SERVER_IP:PORT/FUZZ	                                                Directory Fuzzing
+ffuf -w wordlist.txt:FUZZ -u http://SERVER_IP:PORT/indexFUZZ	                                        Extension Fuzzing
+ffuf -w wordlist.txt:FUZZ -u http://SERVER_IP:PORT/blog/FUZZ.php	                                Page Fuzzing
+ffuf -w wordlist.txt:FUZZ -u http://SERVER_IP:PORT/FUZZ -recursion -recursion-depth 1 -e .php -v	Recursive Fuzzing
+ffuf -w wordlist.txt:FUZZ -u https://FUZZ.hackthebox.eu/	                                        Sub-domain Fuzzing
+ffuf -w wordlist.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb' -fs xxx	        VHost Fuzzing
+ffuf -w wordlist.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx	        Parameter Fuzzing - GET
+ffuf -w wordlist.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx	                                                                                Parameter Fuzzing - POST
+ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx                                                                                                  Value Fuzzing
 ````
 ###### gobuster
 ````
